@@ -24,7 +24,6 @@ func HelloServer2(w http.ResponseWriter, req *http.Request) {
 	io.WriteString(w, "hello, world!\n")
 }
 
-//1. 基于 errgroup 实现一个 http server 的启动和关闭 ，以及 linux signal 信号的注册和处理，要保证能够一个退出，全部注销退出。
 func main() {
 	ctx := context.Background()
 	// 定义 withCancel -> cancel() 方法 去取消下游的 Context
